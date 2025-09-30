@@ -1,14 +1,49 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
 
-Console.WriteLine("Skriv användarnamn!");
-string spelare1 = Console.ReadLine();
-string spelare2 = Console.ReadLine();
+
+// Console.WriteLine("Skriv användarnamn!");
+// string spelare1 = Console.ReadLine();
+// string spelare2 = Console.ReadLine();
+Console.WriteLine("Välkommen till fighting spelet, spelare1 tryck n för att få ditt namn.");
+string spelare1 = "";
+int n = Random.Shared.Next(0, 3);
+ spelare1 = Console.ReadLine();
+if (n == 1)
+{
+    spelare1 = "jack";
+    Console.WriteLine("Spelare1 heter " + spelare1);
+}
+else if (n == 2)
+{
+    spelare1 = "Noel";
+    Console.WriteLine("Spelare1 heter " + spelare1);
+}
+else if (n == 0)
+{
+    spelare1 = "Jak";
+    Console.WriteLine("Spelare1 heter " + spelare1);
+}
+Console.WriteLine("Spelare2, välj ditt namn.");
+string spelare2 = "";
+spelare2 = Console.ReadLine();
+Console.WriteLine("spelare2 heter " + spelare2);
+Console.WriteLine("Ni heter " + spelare1 + " och " + spelare2);
+
 string startspelare = spelare1;
 int hp2 = 100;
 int hp1 = 100;
+string satsning1 = Console.ReadLine();
+string satsning2 = Console.ReadLine();
+int pengarSpelare1 = 1000;
+int pengarSpelare2 = 1000;
+
 Console.WriteLine("Hej, välkomen till slagssmålspelet " + spelare1 + " och " + spelare2);
 Console.WriteLine("Ni har 100hp, den som besegrar den andra först vinner");
+Console.WriteLine(spelare1 + " välj vem du vill satsa på och hur mycket?");
+Console.ReadLine();
+Console.WriteLine(spelare2 + "välj vem du vill satsa på och hur mycket?")
+Console.ReadLine();
 int i = Random.Shared.Next(1, 3);
 if (i == 2)
 {
@@ -80,9 +115,25 @@ Console.WriteLine("");
 }
 Console.WriteLine("");
 Console.WriteLine(motstandaren + " har vunnit!");
-Console.ReadLine();
+
+if (satsning1 == motstandaren)
+{
+    Console.WriteLine("Grattis, du satsade på rätt person");
+}
+else if (satsning1 == aktivSpelare)
+{
+    Console.WriteLine("Synd, du satsade på fel spelare?");
+}
 
 
+if (satsning2 == motstandaren)
+{
+    Console.WriteLine("Grattis, du satsade på rätt person");
+}
+else if (satsning2 == aktivSpelare)
+{
+    Console.WriteLine("Synd, du satsade på fel spelare?");
+}
 
 
 
@@ -117,3 +168,4 @@ Console.ReadLine();
 
 // Console.WriteLine($"HP: {hitpoints}");
 // Console.ReadLine();
+
